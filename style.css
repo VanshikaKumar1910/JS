@@ -1,0 +1,102 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+    font-family: 'Gotham Rounded', sans-serif;
+    font-weight: normal;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    background: linear-gradient(to right, hsl(330, 100%, 69%), #1bb1f1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.calculator-grid {
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    grid-template-columns: repeat(4, 100px);
+    grid-template-rows: minmax(120px, auto) repeat(5, 100px);
+    gap: 10px;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.calculator-grid > button {
+    cursor: pointer;
+    font-size: 2rem;
+    border: 1px solid white;
+    outline: none;
+    background-color: rgba(255, 255, 255, 0.75);
+    border-radius: 10px;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.calculator-grid > button:hover {
+    background-color: rgba(255, 255, 255, 0.9);
+    transform: scale(1.05);
+}
+
+.calculator-grid > button:active {
+    background-color: rgba(255, 255, 255, 1);
+}
+
+.span-two {
+    grid-column: span 2;
+}
+
+.output {
+    grid-column: 1 / -1;
+    background-color: rgba(0, 0, 0, 0.75);
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-around;
+    flex-direction: column;
+    padding: 20px;
+    border-radius: 10px;
+    word-wrap: break-word;
+    word-break: break-all;
+    color: white;
+}
+
+.output .previous-operand {
+    color: rgba(255, 255, 255, 0.75);
+    font-size: 1.5rem;
+}
+
+.output .current-operand {
+    font-size: 2.5rem;
+}
+
+/* Additional Styling for Aesthetics */
+.calculator-grid > button.operation {
+    background-color: hsl(200, 100%, 50%);
+    color: white;
+}
+
+.calculator-grid > button.operation:hover {
+    background-color: hsl(200, 100%, 60%);
+}
+
+.calculator-grid > button.equals {
+    background-color: hsl(120, 100%, 40%);
+    color: white;
+}
+
+.calculator-grid > button.equals:hover {
+    background-color: hsl(120, 100%, 50%);
+}
+
+.calculator-grid > button.clear {
+    background-color: hsl(0, 100%, 50%);
+    color: white;
+}
+
+.calculator-grid > button.clear:hover {
+    background-color: hsl(0, 100%, 60%);
+}
